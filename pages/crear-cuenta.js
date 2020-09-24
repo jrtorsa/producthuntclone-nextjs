@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
+import { Formulario, Campo, InputSubmit } from "../components/ui/Formulario";
 
 const CrearCuenta = () => {
   return (
@@ -8,8 +9,8 @@ const CrearCuenta = () => {
         <>
           <h1>Crear Cuenta</h1>
 
-          <form>
-            <div>
+          <Formulario>
+            <Campo>
               <label htmlFor="nombre">Nombre</label>
               <input
                 type="text"
@@ -17,8 +18,8 @@ const CrearCuenta = () => {
                 placeholder="Tu Nombre"
                 name="nombre"
               />
-            </div>
-            <div>
+            </Campo>
+            <Campo>
               <label htmlFor="email">Email</label>
               <input
                 type="text"
@@ -26,8 +27,8 @@ const CrearCuenta = () => {
                 placeholder="Tu email"
                 name="email"
               />
-            </div>
-            <div>
+            </Campo>
+            <Campo>
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -35,9 +36,9 @@ const CrearCuenta = () => {
                 placeholder="Tu password"
                 name="password"
               />
-            </div>
-            <input type="submit" value="Crear Cuenta" />
-          </form>
+            </Campo>
+            <InputSubmit type="submit" value="Crear Cuenta" />
+          </Formulario>
         </>
       </Layout>
     </div>
