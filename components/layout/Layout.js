@@ -25,11 +25,22 @@ const Layout = (props) => {
             body{
                 font-size: 1.6rem;
                 line-height: 1.5;
+                font-family: 'PT Sans', sans-serif;
+
             }
 
             h1, h2, h3 {
                 margin: 0 0 2rem 0;
                 line-height: 1.5;
+            }
+
+            h1, h2 {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 700;
+            }
+
+            h3 {
+                font-family: 'PT Sans', sans-serif;
             }
 
             ul {
@@ -56,6 +67,7 @@ const Layout = (props) => {
           href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link href="/static/css/app.css" rel="stylesheet" />
       </Head>
       <Header />
 
