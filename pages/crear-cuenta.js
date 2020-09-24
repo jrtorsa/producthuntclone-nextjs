@@ -1,4 +1,5 @@
 import React from "react";
+import { css } from "@emotion/core";
 import Layout from "../components/layout/Layout";
 import { Formulario, Campo, InputSubmit } from "../components/ui/Formulario";
 
@@ -7,7 +8,14 @@ const CrearCuenta = () => {
     <div>
       <Layout>
         <>
-          <h1>Crear Cuenta</h1>
+          <h1
+            css={css`
+              text-align: center;
+              margin-top: 5rem;
+            `}
+          >
+            Crear Cuenta
+          </h1>
 
           <Formulario>
             <Campo>
