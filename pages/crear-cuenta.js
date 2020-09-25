@@ -7,6 +7,7 @@ import {
   InputSubmit,
   Error,
 } from "../components/ui/Formulario";
+import firebase from "../firebase";
 
 // validaciones
 import useValidacion from "../hooks/useValidacion";
@@ -29,8 +30,12 @@ const CrearCuenta = () => {
 
   const { nombre, email, password } = valores;
 
-  function crearCuenta() {
-    console.log("Creando Cuenta...");
+  async function crearCuenta() {
+    try {
+      firebase.registrar(nombre, email, password);
+    } catch (error) {
+      console.error("Hubo error al crear al usuario", error.message);
+    }
   }
 
   return (
