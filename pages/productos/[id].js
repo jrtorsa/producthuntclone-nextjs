@@ -59,7 +59,35 @@ const Producto = () => {
     urlimagen,
     votos,
     creador,
+    haVotado,
   } = producto;
+
+  const votarProducto = () => {
+    if (!usuario) {
+      return router.push("/login");
+    }
+
+    // verificar si el usuario ha votado
+    if (haVotado.includes(usuario.uid)) return;
+
+    // guardar el ID del usuario que ha votado
+    const nuevoHaVotado = [...haVotado, usuario.uid];
+
+    // obtner y sumar un nuevo voto
+    const nuevoTotal = votos + 1;
+
+    // actualizar en la bd
+    firebase.db
+      .collection("productos")
+      .doc(id)
+      .update({ votos: nuevoTotal, haVotado: nuevoHaVotado });
+
+    // actualizar el state
+    guardarProducto({
+      ...producto,
+      votos: nuevoTotal,
+    });
+  };
 
   return (
     <Layout>
@@ -129,7 +157,7 @@ const Producto = () => {
                   {votos} Votos
                 </p>
 
-                {usuario && <Boton>Votar</Boton>}
+                {usuario && <Boton onClick={votarProducto}>Votar</Boton>}
               </div>
             </aside>
           </ContenedorProducto>
