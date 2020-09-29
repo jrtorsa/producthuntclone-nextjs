@@ -65,7 +65,7 @@ const NuevoProducto = () => {
       comentarios: [],
       creado: Date.now(),
       creador: {
-        id: usuario.id,
+        id: usuario.uid,
         nombre: usuario.displayName,
       },
     };
