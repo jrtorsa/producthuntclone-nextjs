@@ -58,6 +58,7 @@ const Producto = () => {
     url,
     urlimagen,
     votos,
+    creador,
   } = producto;
 
   return (
@@ -79,6 +80,9 @@ const Producto = () => {
               <p>
                 Publicado hace:{" "}
                 {formatDistanceToNow(new Date(creado), { locale: es })}
+              </p>
+              <p>
+                Publicado por: {creador.nombre} de: {empresa}
               </p>
               <img src={urlimagen} />
               <p>{descripcion}</p>
@@ -107,6 +111,7 @@ const Producto = () => {
               <Boton target="_blank" bgColor="true" href={url}>
                 Visitar URL
               </Boton>
+
               <div
                 css={css`
                   margin-top: 5rem;
