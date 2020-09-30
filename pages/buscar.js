@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "../components/layout/Layout";
 import DetallesProducto from "../components/layout/DetallesProducto";
 import useProducto from "../hooks/useProducto";
-import useRouter from "next/router";
+import { useRouter } from "next/router";
 
 const Buscar = () => {
   const router = useRouter();
